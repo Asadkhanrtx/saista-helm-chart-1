@@ -1,0 +1,18 @@
+[Unit]
+Description=Saista Bakers - User Service (FastAPI :5001)
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/saista/user-service
+EnvironmentFile=/opt/saista/user-service/.env
+ExecStartPre=/opt/saista/user-service/venv/bin/python /opt/saista/user-service/migrate_db.py
+ExecStart=/opt/saista/user-service/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 5001 --workers 2
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

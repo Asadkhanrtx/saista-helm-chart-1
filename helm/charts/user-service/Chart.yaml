@@ -1,5 +1,0 @@
-apiVersion: v2
-name: user-service
-description: Saista Bakers — User Service Sub-Chart
-type: application
-version: 1.0.0

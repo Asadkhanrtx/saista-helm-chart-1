@@ -1,0 +1,17 @@
+[Unit]
+Description=Saista Bakers - Order Service (FastAPI :5002)
+After=network.target saista-user.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/saista/order-service
+EnvironmentFile=/opt/saista/order-service/.env
+ExecStart=/opt/saista/order-service/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 5002 --workers 2
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
