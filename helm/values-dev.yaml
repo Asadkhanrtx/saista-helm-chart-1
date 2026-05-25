@@ -1,0 +1,15 @@
+global:
+  namespace: dev
+  imageTag: latest
+
+user-service:
+  replicaCount: 1
+
+order-service:
+  replicaCount: 1
+
+payment-service:
+  replicaCount: 1
+
+frontend:
+  replicaCount: 1

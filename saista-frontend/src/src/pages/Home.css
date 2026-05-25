@@ -1,0 +1,99 @@
+/* ==========================
+   HOME PAGE - PRODUCTION
+   ========================== */
+
+.home-page { min-height: 100vh; overflow-x: hidden; }
+
+/* Hero */
+.hero {
+  height: 90vh;
+  background: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+  display: flex; align-items: center; padding: 0 10%;
+}
+
+.hero-content { max-width: 650px; color: white; animation: fadeInUp 1s ease; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+.badge {
+  background: #f7cac9; color: #8b3a3a; padding: 6px 15px; border-radius: 20px;
+  font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 25px; display: inline-block;
+}
+
+.hero-content h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; }
+.hero-content .script { font-family: 'Playball', cursive; color: #f7cac9; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; line-height: 1.6; }
+
+.hero-actions { display: flex; gap: 20px; }
+.btn-primary {
+  background: #d4af37; color: white; padding: 16px 45px; border-radius: 35px;
+  font-weight: 700; text-decoration: none; transition: all 0.3s;
+}
+.btn-primary:hover { background: #c4a02e; transform: scale(1.05); }
+
+.btn-outline {
+  border: 2px solid white; color: white; padding: 14px 45px; border-radius: 35px;
+  font-weight: 700; text-decoration: none; transition: all 0.3s;
+}
+.btn-outline:hover { background: white; color: #333; }
+
+/* Featured Cats */
+.featured-cats { padding: 100px 5%; background: #fff; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: 2.5rem; color: #3d2b1f; margin-bottom: 10px; }
+.section-header p { color: #aaa; font-size: 1.1rem; }
+
+.cats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.cat-card { text-decoration: none; border-radius: 25px; overflow: hidden; background: #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.05); transition: all 0.3s; }
+.cat-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.1); }
+
+.cat-image { height: 280px; overflow: hidden; }
+.cat-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.cat-card:hover .cat-image img { transform: scale(1.1); }
+
+.cat-info { padding: 25px; text-align: center; }
+.cat-info h3 { font-size: 1.4rem; color: #333; margin-bottom: 8px; }
+.cat-info p { color: #aaa; font-size: 0.9rem; }
+
+/* Why Us */
+.why-us { padding: 100px 5%; background: #fdfaf9; }
+.why-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
+.why-text h2 { font-size: 2.8rem; color: #3d2b1f; margin-bottom: 40px; }
+
+.feature-item { display: flex; gap: 25px; margin-bottom: 35px; }
+.f-icon { font-size: 2.5rem; }
+.feature-item h4 { font-size: 1.2rem; color: #333; margin-bottom: 5px; }
+.feature-item p { color: #777; line-height: 1.6; }
+
+.why-image img { width: 100%; border-radius: 35px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+
+/* Footer */
+.footer { background: #3d2b1f; color: white; padding: 80px 5% 40px; }
+.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; margin-bottom: 60px; }
+.footer-brand h2 { font-size: 2.5rem; margin-bottom: 20px; color: #f7cac9; }
+.footer-links { display: flex; flex-direction: column; gap: 15px; }
+.footer-links a { color: #ccc; text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: #f7cac9; }
+.footer-social p { font-weight: 700; margin-bottom: 15px; }
+.social-icons { display: flex; gap: 20px; color: #aaa; }
+
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; color: #777; font-size: 0.9rem; }
+
+@media (max-width: 1024px) {
+  .hero-content h1 { font-size: 3.5rem; }
+  .why-content { grid-template-columns: 1fr; gap: 50px; }
+  .cats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.8rem; }
+  .cats-grid { grid-template-columns: 1fr; }
+  .footer-content { grid-template-columns: 1fr; gap: 40px; }
+}

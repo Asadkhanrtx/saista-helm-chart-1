@@ -1,0 +1,5 @@
+apiVersion: v2
+name: order-service
+description: Saista Bakers — Order Service Sub-Chart
+type: application
+version: 1.0.0

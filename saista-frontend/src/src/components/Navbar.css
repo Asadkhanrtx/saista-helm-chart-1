@@ -1,0 +1,233 @@
+/* ============================
+   NAVBAR STYLES - PRODUCTION
+   ============================ */
+
+.navbar-wrapper {
+  width: 100%;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+}
+
+/* TOP BAR - pastel pink brand bar */
+.navbar-top {
+  background: linear-gradient(135deg, #f7cac9 0%, #f9b8b7 100%);
+  padding: 12px 0;
+  text-align: center;
+}
+
+.logo-link {
+  font-family: 'Playball', cursive;
+  font-size: 2.2rem;
+  color: #8b3a3a;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.logo-link:hover { opacity: 0.85; }
+
+/* BOTTOM NAV */
+.navbar-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background: white;
+  height: 55px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.nav-links li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links .dropbtn {
+  color: #555;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 1.2px;
+  transition: color 0.2s, background 0.2s;
+  text-decoration: none;
+  padding: 0 18px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links .dropbtn:hover {
+  color: #d4af37;
+  background: rgba(212,175,55,0.05);
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 210px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  z-index: 999;
+  border-top: 3px solid #f7cac9;
+}
+
+.dropdown-content a {
+  color: #444 !important;
+  padding: 12px 18px !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  border-bottom: 1px solid #fafafa;
+  height: auto !important;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-content a:hover {
+  background: #fff5f5 !important;
+  color: #d4696a !important;
+  padding-left: 24px !important;
+}
+
+/* NAV ACTIONS */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-user {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.cart-btn {
+  background: #f7cac9;
+  color: #8b3a3a;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cart-btn:hover {
+  background: #f4b0af;
+  transform: translateY(-1px);
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1.5px solid #ccc;
+  color: #888;
+  padding: 7px 16px;
+  border-radius: 25px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btn-logout:hover {
+  border-color: #e57373;
+  color: #e57373;
+}
+
+.btn-nav-login {
+  color: #555;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: 1.5px solid #ddd;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btn-nav-login:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+.btn-nav-signup {
+  background: #d4af37;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btn-nav-signup:hover {
+  background: #c4a02e;
+  transform: translateY(-1px);
+}
+
+/* MOBILE */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .navbar-bottom { padding: 0 20px; position: relative; flex-wrap: wrap; height: auto; }
+  .mobile-menu-btn { display: block; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background: white;
+    border-top: 1px solid #f0f0f0;
+    padding: 10px 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { height: 45px; width: 100%; }
+  .nav-links a, .nav-links .dropbtn { width: 100%; }
+  .nav-actions { margin: 10px 0; gap: 8px; }
+  .logo-link { font-size: 1.8rem; }
+  .navbar-top { padding: 10px 0; }
+  .dropdown-content { position: static; box-shadow: none; border: none; background: #fafafa; }
+}

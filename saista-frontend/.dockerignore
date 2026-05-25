@@ -1,0 +1,5 @@
+src/node_modules
+src/.env
+src/.env.local
+src/build/
+*.md

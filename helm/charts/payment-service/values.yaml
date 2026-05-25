@@ -1,0 +1,18 @@
+replicaCount: 2
+image:
+  repository: asadoblivion/saista-payment-service
+  pullPolicy: Always
+port: 5003
+smtp:
+  server: smtp.gmail.com
+  port: "587"
+  senderEmail: asadchamp109@gmail.com
+  user: asadchamp109@gmail.com
+  password: "eepbldhaftqdggrt"
+resources:
+  limits:
+    cpu: 500m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

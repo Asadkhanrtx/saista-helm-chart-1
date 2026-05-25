@@ -1,0 +1,326 @@
+/* ==================================
+   CUSTOM CAKE DESIGN - PRODUCTION
+   ================================== */
+
+.custom-cake-page {
+  min-height: 100vh;
+  background: #fdfaf9;
+  padding-bottom: 50px;
+}
+
+.custom-hero {
+  background: linear-gradient(135deg, #f7cac9 0%, #f9b8b7 100%);
+  padding: 60px 20px;
+  text-align: center;
+  color: #3d2b1f;
+}
+
+.custom-hero h1 {
+  font-family: 'Playball', cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.custom-hero p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.custom-container {
+  max-width: 1000px;
+  margin: -40px auto 0;
+  padding: 0 20px;
+}
+
+.custom-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  padding: 40px;
+  border: 1px solid #f0f0f0;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #fdf2f1;
+  padding-bottom: 20px;
+}
+
+.card-header h2 {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #eee;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.step.active {
+  background: #f7cac9;
+  color: #8b3a3a;
+}
+
+.divider {
+  width: 20px;
+  height: 2px;
+  background: #eee;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.form-section h3 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field {
+  margin-bottom: 25px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.pound-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pound-selector button {
+  padding: 10px 18px;
+  border: 1.5px solid #eee;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+  color: #666;
+}
+
+.pound-selector button.active {
+  background: #f7cac9;
+  border-color: #f7cac9;
+  color: #8b3a3a;
+}
+
+.pound-selector input {
+  width: 80px;
+  padding: 10px;
+  border: 1.5px solid #eee;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.pound-selector input.active {
+  border-color: #f7cac9;
+  background: #fff5f5;
+}
+
+select, textarea, input[type="date"] {
+  width: 100%;
+  padding: 14px;
+  border: 1.5px solid #eee;
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #333;
+  transition: all 0.2s;
+}
+
+select:focus, textarea:focus, input[type="date"]:focus {
+  outline: none;
+  border-color: #f7cac9;
+  box-shadow: 0 0 0 4px rgba(247, 202, 201, 0.2);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.fruit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.fruit-grid button {
+  padding: 12px;
+  border: 1.5px solid #eee;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.fruit-grid button.active {
+  background: #e8f5f0;
+  border-color: #a7d7c5;
+  color: #3a9a82;
+  font-weight: 600;
+}
+
+.price-sticky {
+  margin-top: 40px;
+  padding: 25px;
+  background: #fafafa;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-info .label {
+  font-size: 0.8rem;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.price-info .value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #d4af37;
+}
+
+.place-btn {
+  background: #d4af37;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 16px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.place-btn:hover {
+  background: #c4a02e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212,175,55,0.3);
+}
+
+.pricing-guide {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px dashed #eee;
+}
+
+.pricing-guide h4 {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.guide-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.success-overlay {
+  display: flex;
+  justify-content: center;
+  padding: 100px 20px;
+}
+
+.success-card {
+  background: white;
+  padding: 50px;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.success-card .icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.success-card h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.success-card .summary {
+  background: #fdfaf9;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+.success-card .btn-primary {
+  margin-top: 20px;
+  padding: 14px 30px;
+  background: #d4af37;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .form-grid { grid-template-columns: 1fr; gap: 30px; }
+  .price-sticky { flex-direction: column; gap: 20px; text-align: center; }
+  .custom-card { padding: 25px; }
+  .custom-hero h1 { font-size: 2.2rem; }
+}
+
+.animate-fade {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

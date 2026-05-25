@@ -1,0 +1,288 @@
+/* ==========================
+   ADMIN DASHBOARD CSS
+   ========================== */
+.admin-login-page {
+  min-height: 100vh;
+  background: #fdfaf9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+.admin-login-card {
+  background: #3d2b1f;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+}
+.admin-logo {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.admin-login-card h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.admin-login-card h2 {
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-bottom: 25px;
+}
+.admin-error {
+  background: #ef4444;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+.admin-login-card .field {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.admin-login-card label {
+  display: block;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.admin-login-card input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #5a4b41;
+  background: #2a1c14;
+  color: white;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.admin-login-card input:focus {
+  border-color: #a7d7c5;
+}
+.admin-login-card button {
+  width: 100%;
+  padding: 12px;
+  background: #a7d7c5;
+  color: #3d2b1f;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-login-card button:hover {
+  background: #8ab8a7;
+}
+.admin-login-card button:disabled {
+  background: #4b5563;
+  cursor: not-allowed;
+}
+.back-link {
+  margin-top: 20px;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.back-link:hover {
+  color: white;
+}
+
+/* Dashboard */
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #fdfaf9;
+  font-family: 'Inter', sans-serif;
+}
+.admin-sidebar {
+  width: 250px;
+  background: #3d2b1f;
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+.admin-sidebar h2 {
+  padding: 0 20px 20px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #374151;
+  margin-bottom: 20px;
+}
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+}
+.admin-nav-item {
+  padding: 15px 20px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.admin-nav-item:hover, .admin-nav-item.active {
+  background: #4a382a;
+  color: white;
+  border-left: 4px solid #a7d7c5;
+}
+.admin-logout {
+  margin-top: auto;
+  padding: 15px 20px;
+  color: #ef4444;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-logout:hover {
+  background: #1f2937;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+.admin-header {
+  margin-bottom: 30px;
+}
+.admin-header h1 {
+  font-size: 1.8rem;
+  color: #3d2b1f;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.stat-card h3 {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.stat-card .value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3d2b1f;
+}
+
+.admin-panel {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.panel-header h2 {
+  font-size: 1.2rem;
+  color: #3d2b1f;
+}
+.admin-btn {
+  padding: 8px 16px;
+  background: #a7d7c5;
+  color: #3d2b1f;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.admin-table th, .admin-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+.admin-table th {
+  background: #f9fafb;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+.admin-table td {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.status-badge.pending { background: #fef3c7; color: #d97706; }
+.status-badge.confirmed { background: #d1fae5; color: #059669; }
+.status-badge.completed { background: #dbeafe; color: #2563eb; }
+.status-badge.cancelled { background: #fee2e2; color: #dc2626; }
+.status-badge.unpaid { background: #fee2e2; color: #dc2626; }
+.status-badge.paid { background: #d1fae5; color: #059669; }
+
+.action-select {
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+  background: white;
+  margin-right: 10px;
+}
+.email-btn {
+  padding: 6px 10px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Modals */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.admin-modal {
+  background: white;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+}
+.admin-modal h2 { margin-bottom: 20px; }
+.admin-modal .field { margin-bottom: 15px; }
+.admin-modal label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem;}
+.admin-modal input, .admin-modal select, .admin-modal textarea {
+  width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px;
+}
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+.modal-actions button { padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer;}
+.modal-actions .cancel { background: #e5e7eb; color: #374151; }
+.modal-actions .save { background: #a7d7c5; color: #3d2b1f; font-weight: 600; }

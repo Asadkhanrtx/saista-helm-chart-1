@@ -1,0 +1,8 @@
+# Never commit secrets with real values
+# k8s/secret.yaml is committed but should use placeholder values in VCS
+# Override with --set or a Secrets Manager at deploy time
+
+# IDE
+.idea/
+.vscode/
+*.swp

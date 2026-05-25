@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+  namespace: {{ .Values.global.namespace }}
+data:
+  MYSQL_DATABASE: {{ .Values.database | quote }}

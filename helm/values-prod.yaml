@@ -1,0 +1,15 @@
+global:
+  namespace: prod
+  imageTag: stable
+
+user-service:
+  replicaCount: 2
+
+order-service:
+  replicaCount: 2
+
+payment-service:
+  replicaCount: 2
+
+frontend:
+  replicaCount: 2

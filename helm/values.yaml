@@ -1,0 +1,93 @@
+# ─── GLOBAL — inherited by every sub-chart ───────────────────
+global:
+  namespace: dev
+  imageTag: latest
+  db:
+    user: root
+    name: saista_bakers
+    port: "3306"
+  secrets:
+    dbPassword: "Asad@1234"
+    secretKey: "saista-bakers-super-secure-prod-key-2024"
+    jwtSecret: "saista-bakers-super-secure-prod-key-2024"
+
+# ─── SUB-CHART: mysql ────────────────────────────────────────
+mysql:
+  image:
+    repository: mysql
+    tag: "8.0"
+  rootPassword: "Asad@1234"
+  database: saista_bakers
+  storage:
+    size: 5Gi
+    nfsServer: "172.31.12.241"
+    nfsPath: "/exports/saista/mysql"
+  gateway:
+    name: saista-gateway
+    controllerName: kgateway.dev/kgateway
+
+# ─── SUB-CHART: user-service ─────────────────────────────────
+user-service:
+  replicaCount: 2
+  image:
+    repository: asadoblivion/saista-user-service
+    pullPolicy: Always
+  port: 5001
+  resources:
+    limits:
+      cpu: 500m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+# ─── SUB-CHART: order-service ────────────────────────────────
+order-service:
+  replicaCount: 2
+  image:
+    repository: asadoblivion/saista-order-service
+    pullPolicy: Always
+  port: 5002
+  resources:
+    limits:
+      cpu: 500m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+# ─── SUB-CHART: payment-service ──────────────────────────────
+payment-service:
+  replicaCount: 2
+  image:
+    repository: asadoblivion/saista-payment-service
+    pullPolicy: Always
+  port: 5003
+  smtp:
+    server: smtp.gmail.com
+    port: "587"
+    senderEmail: asadchamp109@gmail.com
+    user: asadchamp109@gmail.com
+    password: "eepbldhaftqdggrt"
+  resources:
+    limits:
+      cpu: 500m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+# ─── SUB-CHART: frontend ─────────────────────────────────────
+frontend:
+  replicaCount: 2
+  image:
+    repository: asadoblivion/saista-frontend
+    pullPolicy: Always
+  port: 80
+  resources:
+    limits:
+      cpu: 300m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi

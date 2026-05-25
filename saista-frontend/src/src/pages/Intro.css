@@ -1,0 +1,169 @@
+/* ================================
+   BIRTHDAY CAKE INTRO ANIMATION
+   ================================ */
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #1a0533 0%, #3b0f6f 50%, #1a0533 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
+}
+
+.intro-screen.blown { opacity: 0; }
+
+/* Stars */
+.stars { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.star {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: white;
+  border-radius: 50%;
+  left: var(--x); top: var(--y);
+  animation: twinkle 2s infinite var(--delay);
+  opacity: 0;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Cake Scene */
+.cake-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Cake */
+.cake { position: relative; }
+
+.cake-bottom {
+  width: 180px; height: 55px;
+  background: linear-gradient(180deg, #e91e8c, #c2185b);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(233,30,140,0.4);
+  position: relative;
+}
+.cake-bottom::before {
+  content: '';
+  position: absolute; inset: 5px 10px;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.15) 0px, rgba(255,255,255,0.15) 10px, transparent 10px, transparent 20px);
+  border-radius: 5px;
+}
+
+.cake-middle {
+  width: 140px; height: 45px;
+  background: linear-gradient(180deg, #ff6b9d, #e91e8c);
+  border-radius: 8px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(233,30,140,0.3);
+}
+
+.cake-top {
+  width: 100px; height: 35px;
+  background: linear-gradient(180deg, #ff9bcd, #ff6b9d);
+  border-radius: 6px;
+  margin: 0 auto;
+  box-shadow: 0 3px 10px rgba(255,107,157,0.3);
+}
+
+/* Frosting on layers */
+.cake-bottom::after, .cake-middle::after {
+  content: '';
+  position: absolute;
+  top: -8px; left: -5px; right: -5px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 10px -3px 0 white, 20px -2px 0 white, 30px -4px 0 white,
+              40px -2px 0 white, 50px -3px 0 white, 60px -2px 0 white,
+              70px -4px 0 white, 80px -2px 0 white, 90px -3px 0 white,
+              100px -2px 0 white, 110px -4px 0 white, 120px -2px 0 white;
+}
+
+/* Candles */
+.candles {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.candle-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candle {
+  width: 12px; height: 35px;
+  background: linear-gradient(180deg, #ffd700, #ffaa00);
+  border-radius: 3px;
+  position: relative;
+}
+
+/* Flame */
+.flame {
+  width: 14px; height: 22px;
+  position: relative;
+  margin-bottom: 2px;
+  animation: flicker 0.3s infinite alternate;
+}
+.flame-inner {
+  width: 100%; height: 100%;
+  background: linear-gradient(180deg, #fff7aa, #ffcc00, #ff6600);
+  border-radius: 50% 50% 30% 30%;
+  filter: blur(1px);
+}
+.flame::after {
+  content: '';
+  position: absolute;
+  inset: 20% 25%;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+.flame.out { opacity: 0; transition: opacity 0.3s; }
+
+@keyframes flicker {
+  from { transform: scaleX(1) scaleY(1) rotate(-2deg); }
+  to { transform: scaleX(0.85) scaleY(1.1) rotate(2deg); }
+}
+
+/* Intro Text */
+.intro-text { text-align: center; color: white; }
+.intro-text h1 {
+  font-family: Georgia, serif;
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(255,215,0,0.8);
+}
+.intro-text p { font-size: 1.2rem; color: rgba(255,255,255,0.7); letter-spacing: 2px; }
+
+.animate-in { animation: fadeInUp 0.8s ease; }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Countdown */
+.countdown-wrap { height: 100px; display: flex; align-items: center; justify-content: center; }
+.countdown-number {
+  font-size: 7rem;
+  font-weight: 900;
+  color: #ffd700;
+  text-shadow: 0 0 30px rgba(255,215,0,0.9), 0 0 60px rgba(255,215,0,0.5);
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: block;
+}
+@keyframes popIn {
+  from { transform: scale(0.3); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
