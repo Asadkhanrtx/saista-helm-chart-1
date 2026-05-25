@@ -56,32 +56,7 @@ cp "$REPO_ROOT/saista-order/src/.env.example"   /opt/saista/order-service/.env
 cp "$REPO_ROOT/saista-payment/src/.env.example" /opt/saista/payment-service/.env
 log ".env files created"
 
-# ── 6. Pause — user must fill in real values ───────────────────
-echo ""
-echo -e "${YELLOW}══════════════════════════════════════════════════════${NC}"
-echo -e "${YELLOW}  FILL IN YOUR .env FILES BEFORE CONTINUING${NC}"
-echo -e "${YELLOW}══════════════════════════════════════════════════════${NC}"
-echo ""
-echo "Open each file and replace the placeholder values:"
-echo ""
-echo "  DB_HOST        →  your RDS endpoint"
-echo "  DB_PASSWORD    →  your RDS master password"
-echo "  SMTP_PASSWORD  →  your Gmail App Password"
-echo ""
-echo "Commands to edit (run in separate terminal or use nano here):"
-echo "  nano /opt/saista/user-service/.env"
-echo "  nano /opt/saista/order-service/.env"
-echo "  nano /opt/saista/payment-service/.env"
-echo ""
-read -rp "Press [Enter] once you have saved all three .env files..."
-
-# ── 7. Validate .env files are not still placeholders ──────────
-for svc in user-service order-service payment-service; do
-    if grep -q "YOUR_RDS_ENDPOINT" /opt/saista/$svc/.env; then
-        err "$svc/.env still has placeholder values. Edit it and re-run."
-    fi
-done
-log ".env files look good (no placeholders detected)"
+log ".env files are pre-filled and ready"
 
 # ── 8. Configure backend Nginx ─────────────────────────────────
 info "Configuring Nginx..."

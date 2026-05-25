@@ -105,16 +105,7 @@ The script does everything in one go: installs Python 3.11, creates venvs, insta
 bash infra/backend-setup.sh
 ```
 
-When the script pauses, open a **second terminal** to the same EC2 and edit the three `.env` files:
-
-```bash
-# Fill in: DB_HOST, DB_PASSWORD, SMTP_PASSWORD
-nano /opt/saista/user-service/.env
-nano /opt/saista/order-service/.env
-nano /opt/saista/payment-service/.env
-```
-
-Then go back to the first terminal and press **Enter** to continue. The script will run the migration, start the services, and print a health check summary.
+The script runs fully without any pauses — RDS endpoint, DB password, and SMTP credentials are already baked into the `.env.example` files in the repo. It will run the migration, start all three services, and print a health check summary at the end.
 
 > **DB migration note:** The script runs `migrate_db.py` automatically. This creates all tables and seeds:
 > - Admin user: `asadadmin` / `Asad@1234`
